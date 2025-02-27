@@ -1,0 +1,25 @@
+//범위항상주의 
+import java.util.Scanner;
+class Main {
+	public static void main(String[] args) throws Exception {
+		Scanner input = new Scanner(System.in);
+
+		int n = input.nextInt();
+		int[] arr = new int[200001];
+		
+		for(int i = 0; i < n; i++) {
+			int temp = input.nextInt();
+			int tempAbs = Math.abs(temp);
+			arr[tempAbs] = arr[tempAbs] + temp;
+		}
+		
+		long sum = 0;
+		
+		for(int i = 0; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		System.out.println(sum);
+		input.close();
+	}
+
+}
